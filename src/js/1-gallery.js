@@ -91,42 +91,42 @@ function render() {
 
 render();
 
-// container.addEventListener('click', e => {
-//   e.preventDefault();
-//   if (e.target === e.currentTarget) return;
-//   const linkBigImg = e.target.dataset.source;
-//   console.log('Link for a big image:', linkBigImg);
+container.addEventListener('click', e => {
+  e.preventDefault();
+  if (e.target === e.currentTarget) return;
+  const linkBigImg = e.target.dataset.source;
+  console.log('Link for a big image:', linkBigImg);
 
-//   const instance = basicLightbox.create(
-//     `
-//   <div class="modal">
-//   <img
-//   src="${linkBigImg}"
-//   alt="image"
-// />
-//   </div>
+  //   const instance = basicLightbox.create(
+  //     `
+  //   <div class="modal">
+  //   <img
+  //   src="${linkBigImg}"
+  //   alt="image"
+  // />
+  //   </div>
 
-// `,
-//     {
-//       /*
-//        * Function that gets executed before the lightbox will be shown.
-//        * Returning false will prevent the lightbox from showing.
-//        */
-//       onShow: instance => {
-//         document.addEventListener('keydown', modalClose);
-//       },
-//       /*
-//        * Function that gets executed before the lightbox closes.
-//        * Returning false will prevent the lightbox from closing.
-//        */
-//       onClose: instance => {
-//         document.removeEventListener('keydown', modalClose);
-//       },
-//     }
-//   );
+  // `,
+  //     {
+  //       /*
+  //        * Function that gets executed before the lightbox will be shown.
+  //        * Returning false will prevent the lightbox from showing.
+  //        */
+  //       onShow: instance => {
+  //         document.addEventListener('keydown', modalClose);
+  //       },
+  //       /*
+  //        * Function that gets executed before the lightbox closes.
+  //        * Returning false will prevent the lightbox from closing.
+  //        */
+  //       onClose: instance => {
+  //         document.removeEventListener('keydown', modalClose);
+  //       },
+  //     }
+  //   );
 
-//   function modalClose(e) {
-//     if (e.code === 'Escape') instance.close();
-//   }
-//   instance.show();
-// });
+  //   function modalClose(e) {
+  //     if (e.code === 'Escape') instance.close();
+  //   }
+  //   instance.show();
+});

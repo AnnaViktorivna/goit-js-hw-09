@@ -35,7 +35,7 @@
   row-gap: 48px;
 }
 
-/* .gallery-item {
+.gallery-item {
   width: 360px;
   height: 300px;
   width: calc((100% - 2 * 24px) / 3);
@@ -49,4 +49,4 @@
 
 .modal {
   max-width: 100%;
-} */
+}
