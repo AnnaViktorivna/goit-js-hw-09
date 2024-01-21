@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -73,7 +76,6 @@ function imageTemplate(img) {
     <img
       class="gallery-image"
       src="${preview}"
-      data-source="${original}"
       alt="${description}"
     />
   </a>
@@ -91,42 +93,12 @@ function render() {
 
 render();
 
-container.addEventListener('click', e => {
-  e.preventDefault();
-  if (e.target === e.currentTarget) return;
-  const linkBigImg = e.target.dataset.source;
-  console.log('Link for a big image:', linkBigImg);
-
-  //   const instance = basicLightbox.create(
-  //     `
-  //   <div class="modal">
-  //   <img
-  //   src="${linkBigImg}"
-  //   alt="image"
-  // />
-  //   </div>
-
-  // `,
-  //     {
-  //       /*
-  //        * Function that gets executed before the lightbox will be shown.
-  //        * Returning false will prevent the lightbox from showing.
-  //        */
-  //       onShow: instance => {
-  //         document.addEventListener('keydown', modalClose);
-  //       },
-  //       /*
-  //        * Function that gets executed before the lightbox closes.
-  //        * Returning false will prevent the lightbox from closing.
-  //        */
-  //       onClose: instance => {
-  //         document.removeEventListener('keydown', modalClose);
-  //       },
-  //     }
-  //   );
-
-  //   function modalClose(e) {
-  //     if (e.code === 'Escape') instance.close();
-  //   }
-  //   instance.show();
+new SimpleLightbox('.gallery a', {
+  /* options */
+  navText: ['←', '→'],
+  closeText: '×',
+  enableKeyboard: true,
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
 });
